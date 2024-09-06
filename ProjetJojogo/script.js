@@ -10,18 +10,18 @@ tailwind.config = {
       },
     },
   };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const controleurTheme = document.querySelector(".theme-controller");
+    
+    const basculerTheme = (estSombre) => {
+      document.documentElement.classList.toggle("dark", estSombre);
+      document.documentElement.setAttribute("data-theme", estSombre ? "black" : "light");
+      controleurTheme.checked = estSombre;
+      localStorage.setItem("modeSombre", estSombre);
+    };
   
-  document.addEventListener("DOMContentLoaded", function () {
-    document
-      .querySelector(".theme-controller")
-      .addEventListener("change", function () {
-        if (this.checked) {
-          document.documentElement.classList.add("dark");
-          document.documentElement.setAttribute("data-theme", "black");
-        } else {
-          document.documentElement.classList.remove("dark");
-          document.documentElement.setAttribute("data-theme", "light");
-        }
-      });
+    controleurTheme.addEventListener("change", () => basculerTheme(controleurTheme.checked));
+  
+    basculerTheme(localStorage.getItem("modeSombre") === "true");
   });
-  
