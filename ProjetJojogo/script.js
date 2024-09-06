@@ -4,6 +4,7 @@ tailwind.config = {
       extend: {
         backgroundColor: {
           dark: "black",
+         
         },
       
       },
