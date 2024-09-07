@@ -10,7 +10,7 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js" defer></script>
 </head>
-<body>
+<body class="flex flex-col min-h-screen">
 
   <!-- NAVBAR -->
   <header class="text-gray-400 bg-blue-600 dark:bg-black dark:border-b sticky top-0 left-0 right-0 w-full z-50">
@@ -19,22 +19,9 @@
         <span class="text-2xl font-medium">JoJogo</span>
       </a>
       
-      <nav class="hidden md:flex items-center space-x-5">
-        <a class="text-slate-50 font-semibold hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">Accueil</a>
-        <a class="text-slate-50 font-medium hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">Sports</a>
-        <a class="text-slate-50 font-medium hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">FAQ</a>
-      </nav>
+     
       
       <div class="flex items-center space-x-4">
-        <button class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full text-sm transition duration-300 ease-in-out transform hover:scale-105">
-          <a href="Connexion.html" class="flex items-center">
-            Se connecter
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </a>
-        </button>
-        
         <div class="boutonDarkMode">
           <label class="swap swap-rotate">
             <input type="checkbox" class="theme-controller" value="dark" />
@@ -50,26 +37,33 @@
     </div>
   </header>
 
-  <!-- Section d'accueil -->
-  <div class="accueil min-h-screen bg-blue-500 dark:bg-black flex flex-col justify-center items-center p-4">
-    <div class="max-w-5xl mx-auto text-center">
-      <h1 class="text-white dark:text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-        Venez faire du sport que vous soyez Amateur ou Compétiteur.
-      </h1>
-      
-      <p class="text-white dark:text-gray-300 text-base sm:text-lg md:text-xl mb-8">
-        Grace a JoJogo trouvez des personnes avec qui faire du sport que ce soit a niveau amateur ou compétiteur. <br>
-        Organiser ou rejoignez des sessions de sport et découvrez ou progressez ensemble. 
-      </p>
-      
-      <div class="flex justify-center">
-        <button class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2.5 px-6 rounded-full text-lg transition duration-300 ease-in-out transform hover:scale-105 w-auto mx-auto">
-          Rejoins JoJogo
-        </button>
+  <section class="text-gray-400 bg-gray-900 body-font relative flex-grow flex flex-col">
+    <div class="container px-5 py-8 mx-auto flex-grow flex flex-col justify-between">
+      <div class="flex flex-col h-full">
+        <div class="flex flex-col text-center w-full mb-8 pt-36">
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Inscrivez vous </h1>
+        </div>
+        <div class="lg:w-1/2 md:w-2/3 mx-auto flex-grow">
+            <div class="flex flex-col items-center space-y-2">
+              <div class="w-full max-w-md">
+                <div class="mb-4">
+                  <label for="name" class="block text-sm font-medium text-gray-400 mb-1">Pseudo</label>
+                  <input type="text" id="name" name="name" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-sky-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
+                <div class="mb-4">
+                  <label for="email" class="block text-sm font-medium text-gray-400 mb-1">Email</label>
+                  <input type="email" id="email" name="email" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-sky-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
+                <div class="mb-6">
+                  <label for="password" class="block text-sm font-medium text-gray-400 mb-1">Mot de passe</label>
+                  <input type="password" id="password" name="password" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-sky-500 focus:bg-gray-900 focus:ring-2 focus:ring-indigo-900 text-base outline-none text-gray-100 py-2 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
+              </div>
+              <button class="text-white bg-sky-500 border-0 py-2 px-8 focus:outline-none hover:bg-sky-700 rounded text-lg">S'inscrire</button>
+            </div>
+          </div>
       </div>
-      
     </div>
-  </div>
-
+  </section>
 </body>
 </html>
