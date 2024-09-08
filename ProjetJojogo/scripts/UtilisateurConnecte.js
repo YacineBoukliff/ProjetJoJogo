@@ -2,6 +2,22 @@ const storedPseudo = localStorage.getItem('userPseudo');
 
 console.log(storedPseudo)
 
+document.addEventListener('DOMContentLoaded', function() {
+    const BoutonMenu = document.getElementById('BoutonMenu');
+    const Defilement = document.getElementById('Defilement');
+
+    BoutonMenu.addEventListener('click', function(event) {
+      event.stopPropagation();
+      Defilement.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', function(event) {
+      if (!Defilement.contains(event.target) && !BoutonMenu.contains(event.target)) {
+        Defilement.classList.add('hidden');
+      }
+    });
+  });
+
 
 function afficherNavbar(){ 
 
@@ -35,11 +51,11 @@ function afficherNavbar(){
   <div id="Defilement" class="absolute right-0 mt-2 w-44 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 hidden">
     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
       <li>
-        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white font-bold">  
+        <a  href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white font-bold ">  
         Paramètres</a>
       </li>
       <li>
-        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white font-bold">Déconnexion</a>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white font-bold js-deconnexion">Déconnexion</a>
       </li>
       <li>
         <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white font-bold">Earnings</a>
@@ -74,18 +90,14 @@ function afficherNavbar(){
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    const BoutonMenu = document.getElementById('BoutonMenu');
-    const Defilement = document.getElementById('Defilement');
+const liendeconnexion = document.querySelector('.js-deconnexion')
 
-    BoutonMenu.addEventListener('click', function(event) {
-      event.stopPropagation();
-      Defilement.classList.toggle('hidden');
-    });
+console.log(liendeconnexion)
 
-    document.addEventListener('click', function(event) {
-      if (!Defilement.contains(event.target) && !BoutonMenu.contains(event.target)) {
-        Defilement.classList.add('hidden');
-      }
-    });
-  });
+    liendeconnexion.addEventListener('click', function(event){
+  event.preventDefault()
+window.alert('Vous avez été déconnecté')
+// localStorage.removeItem('userPseudo')
+window.location.href = 'Connexion.html'
+  
+})
