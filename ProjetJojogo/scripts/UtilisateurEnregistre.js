@@ -55,6 +55,51 @@ function afficherMenu(){
 afficherMenu()
 
 
+
+const accueil = document.querySelector('.js-accueil')
+
+
+function AfficherAccueil(){
+
+   let accueilHtml = "" 
+   
+   accueilHtml += `
+  <div class="max-w-5xl mx-auto text-center mb-8">
+      <h1 class="text-white dark:text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        Venez faire du sport que vous soyez Amateur ou Compétiteur.
+      </h1>
+      
+      <p class="text-white dark:text-gray-300 text-base sm:text-lg md:text-xl mb-8">
+        Grace a JoJogo trouvez des personnes avec qui faire du sport que ce soit a niveau amateur ou compétiteur. <br>
+        Organiser ou rejoignez des sessions de sport et découvrez ou progressez ensemble. 
+      </p>
+      
+      <div class="flex justify-center">
+        <button class="bg-black hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-2xl text-sm transition duration-300 ease-in-out transform hover:scale-105 js-rejoindre">
+          <a  class="flex items-center text-xl  ">
+            Rejoins JoJogo
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-8 h-6 ml-1" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </a>
+        </button>
+      </div>
+      
+    </div>
+   `
+
+   accueil.innerHTML = accueilHtml
+
+   let boutonRejoindre = document.querySelector('.js-rejoindre')
+
+   boutonRejoindre.addEventListener('click', () => {
+    console.log("ca fonctionne")
+   })
+    
+}
+
+AfficherAccueil()
+
 function SeReconnecter(){
 
     const boutonReconnexion = document.querySelector('.js-reconnexion')

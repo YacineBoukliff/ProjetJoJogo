@@ -90,8 +90,6 @@ function afficherNavbar(){
 
  afficherNavbar()
 
-
-
 const liendeconnexion = document.querySelector('.js-deconnexion')
 
     liendeconnexion.addEventListener('click', function(event){
