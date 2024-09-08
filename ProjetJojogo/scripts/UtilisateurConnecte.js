@@ -96,6 +96,6 @@ const liendeconnexion = document.querySelector('.js-deconnexion')
   event.preventDefault()
 window.alert('Vous avez été déconnecté')
 // localStorage.removeItem('userPseudo')
-window.location.href = 'Connexion.html'
+window.location.href = 'UtilisateurEnregistre.html'
   
 })

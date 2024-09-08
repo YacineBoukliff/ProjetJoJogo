@@ -93,7 +93,14 @@ function AfficherAccueil(){
    let boutonRejoindre = document.querySelector('.js-rejoindre')
 
    boutonRejoindre.addEventListener('click', () => {
-    console.log("ca fonctionne")
+   if(storedPseudo && storedPassword){
+    setTimeout(() => {
+        window.location.href = 'UtilisateurConnecte.html'
+    }, 2000)
+   }
+   else{
+    console.log("ca ne fonctionne pas")
+   }
    })
     
 }
@@ -106,7 +113,9 @@ function SeReconnecter(){
 
     boutonReconnexion.addEventListener('click', () => {
         if (storedPseudo && storedPassword){
-            window.location.href = 'UtilisateurConnecte.html'
+            setTimeout(() => {
+                window.location.href = 'UtilisateurConnecte.html'
+            }, 2000)
         }
         else{
             console.log("Erreur")
