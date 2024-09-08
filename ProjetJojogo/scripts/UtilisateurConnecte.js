@@ -1,4 +1,6 @@
-const storedPseudo = localStorage.getItem('userPseudo');
+export const storedPseudo = localStorage.getItem('userPseudo');
+export const storedPassword = localStorage.getItem('userPassword');
+
 
 console.log(storedPseudo)
 
@@ -55,13 +57,13 @@ function afficherNavbar(){
         Paramètres</a>
       </li>
       <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white font-bold">Stats</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white font-bold">Créer nouveau compte </a>
+      </li>
+       <li>
         <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white font-bold js-deconnexion">Déconnexion</a>
-      </li>
-      <li>
-        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white font-bold">Earnings</a>
-      </li>
-      <li>
-        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white font-bold">Sign out</a>
       </li>
     </ul>
   </div>
@@ -91,8 +93,6 @@ function afficherNavbar(){
 
 
 const liendeconnexion = document.querySelector('.js-deconnexion')
-
-console.log(liendeconnexion)
 
     liendeconnexion.addEventListener('click', function(event){
   event.preventDefault()
