@@ -4,6 +4,18 @@ const email = document.querySelector('.js-email')
 const motDePasse = document.getElementById('motdepasse')
 const retapezMotDePasse = document.getElementById('retapezmotdepasse')
 const test = document.querySelector('.js-test')
+const SectionInscription = document.querySelector('.inscription')
+const SectionConnexion = document.querySelector('.ConnexionJs')
+
+
+// Attendez que le DOM soit complètement chargé
+document.addEventListener('DOMContentLoaded', () => {
+    if (SectionInscription && SectionConnexion  ) {
+        console.log("L'élément avec la classe 'inscription' et 'ConnexionJs' a été trouvé.")
+    } else {
+        console.error("L'élément avec la classe 'inscription' et 'ConnexionJs' n'a pas été trouvé.")
+    }
+})
 
 // Variable pour gérer le timeout
 let timeoutId;
@@ -48,6 +60,11 @@ function inscription(){
             } else {
                 test.classList.add("text-green-500");
                 test.textContent = 'Merci pour votre inscription !';
+                
+                // Attendre 2 secondes avant de rediriger vers connecter.html
+                setTimeout(() => {
+                    window.location.href = '../Html/Connecter.html';
+                }, 2000);
             }
         }
 // Effacer le message d'erreur et les classes après 5 secondes
@@ -59,4 +76,10 @@ function inscription(){
     
 }
 
-inscription()
+inscription();
+
+
+
+
+
+
