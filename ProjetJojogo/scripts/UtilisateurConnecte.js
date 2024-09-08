@@ -50,7 +50,7 @@ function afficherNavbar(){
     </svg>
   </button>
   
-  <div id="Defilement" class="absolute right-0 mt-2 w-44 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 hidden">
+  <div id="Defilement" class="absolute right-0 mt-2 w-44 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-800 hidden">
     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
       <li>
         <a  href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white font-bold ">  
