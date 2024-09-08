@@ -2,7 +2,9 @@ const InputPseudo = document.querySelector('.js-pseudo');
 const InputMotDePasse = document.querySelector('.js-motdepasse-connexion');
 const boutonConnexion = document.querySelector('.js-connexion');
 const messageConnexion = document.querySelector('.js-message-connexion');
+const boutonchargement = document.getElementById('boutonchargement');
 
+boutonchargement.classList.add('hidden');
 
 function connexion() {
     // Ajout de console.log pour afficher les valeurs du localStorage
@@ -22,14 +24,18 @@ function connexion() {
 
         if (InputPseudo.value !== "" && InputMotDePasse.value !== "") {
             if (InputPseudo.value === storedPseudo && InputMotDePasse.value === storedPassword) {
+                boutonchargement.classList.remove('hidden');
+                boutonConnexion.classList.add('hidden');
                 messageConnexion.textContent = 'Connexion réussie !';
                 messageConnexion.classList.add('text-green-500');
                 console.log('Connexion réussie');
+                
 
                 // Rediriger vers la page d'accueil ou le tableau de bord
                 setTimeout(() => {
                     window.location.href = '../Html/UtilisateurConnecté.html';
-                }, 2000);
+                    
+                }, 4000);
             } else if (InputPseudo.value !== storedPseudo && InputMotDePasse.value !== storedPassword) {
                 messageConnexion.textContent = 'Le pseudo et le mot de passe sont incorrects.';
                 messageConnexion.classList.add('text-red-500');

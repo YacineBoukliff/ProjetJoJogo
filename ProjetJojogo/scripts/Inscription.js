@@ -4,10 +4,14 @@ const bouton = document.querySelector('.js-bouton')
 const email = document.querySelector('.js-email')
 const retapezMotDePasse = document.getElementById('retapezmotdepasse')
 const test = document.querySelector('.js-test')
+const boutondechargement = document.getElementById('boutondechargement')
 
+console.log(boutondechargement)
 
 // Variable pour gérer le timeout
 let timeoutId;
+
+boutondechargement.classList.add('hidden')
 
 function inscription(){
     const regexPseudo = /^(?=.*[a-zA-Z])[\w\d]{6,}$/;
@@ -49,22 +53,23 @@ function inscription(){
             } else {
                 test.classList.add("text-green-500");
                 test.textContent = 'Merci pour votre inscription !';
-                
+                boutondechargement.classList.remove('hidden');
+                bouton.classList.add('hidden');
                 // Sauvegarder les données dans le localStorage
                 localStorage.setItem('userPseudo', pseudo.value);
                 localStorage.setItem('userPassword', motDePasse.value);
                 
-                // Attendre 2 secondes avant de rediriger vers connecter.html
+                // Attendre 4 secondes avant de rediriger vers connecter.html
                 setTimeout(() => {
                     window.location.href = '../Html/Connecter.html';
-                }, 2000);
+                }, 4000);
             }
         }
 // Effacer le message d'erreur et les classes après 5 secondes
         timeoutId = setTimeout(() => {
             test.textContent = "";
             test.classList.remove("text-red-500", "text-green-500");
-        }, 5000);
+        }, 4000);
     })
     
 }
