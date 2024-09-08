@@ -11,11 +11,14 @@ function connexion() {
     console.log('Valeurs stockées dans le localStorage :');
     console.log('Pseudo:', localStorage.getItem('userPseudo'));
     console.log('Mot de passe:', localStorage.getItem('userPassword'));
-    
+  
 
     boutonConnexion.addEventListener('click', () => {
         const storedPseudo = localStorage.getItem('userPseudo');
         const storedPassword = localStorage.getItem('userPassword');
+
+        // Exporter storedPseudo en le rendant global
+        window.storedPseudo = storedPseudo;
 
         // Ajout de console.log pour afficher les valeurs entrées par l'utilisateur
         console.log("Valeurs entrées par l'utilisateur :");
@@ -33,7 +36,7 @@ function connexion() {
 
                 // Rediriger vers la page d'accueil ou le tableau de bord
                 setTimeout(() => {
-                    window.location.href = '../Html/UtilisateurConnecté.html';
+                    window.location.href = '../Html/UtilisateurConnecte.html';
                     
                 }, 4000);
             } else if (InputPseudo.value !== storedPseudo && InputMotDePasse.value !== storedPassword) {
@@ -58,3 +61,8 @@ function connexion() {
 }
 
 connexion();
+
+// Exporter la fonction pour récupérer storedPseudo
+export function getStoredPseudo() {
+    return window.storedPseudo;
+}

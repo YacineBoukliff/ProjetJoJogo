@@ -6,8 +6,6 @@ const retapezMotDePasse = document.getElementById('retapezmotdepasse')
 const test = document.querySelector('.js-test')
 const boutondechargement = document.getElementById('boutondechargement')
 
-console.log(boutondechargement)
-
 // Variable pour gérer le timeout
 let timeoutId;
 
@@ -44,6 +42,8 @@ function inscription(){
             } else if (!regexMotDePasse.test(motDePasse.value)) {
                 test.classList.add("text-red-500");
                 test.textContent = 'Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule et un chiffre.';
+                console.log(motDePasse.value)
+                console.log(retapezMotDePasse.value)
             } else if (!emailRegex.test(email.value)) {
                 test.classList.add("text-red-500");
                 test.textContent = 'Veuillez entrer une adresse email valide.';
@@ -61,7 +61,7 @@ function inscription(){
                 
                 // Attendre 4 secondes avant de rediriger vers connecter.html
                 setTimeout(() => {
-                    window.location.href = '../Html/Connecter.html';
+                    window.location.href = '../Html/Connexion.html';
                 }, 4000);
             }
         }
