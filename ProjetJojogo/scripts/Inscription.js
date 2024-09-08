@@ -1,21 +1,14 @@
+export const motDePasse = document.getElementById('motdepasse')
+export const pseudo = document.querySelector('.js-pseudo')
 const bouton = document.querySelector('.js-bouton')
-const pseudo = document.querySelector('.js-pseudo')
 const email = document.querySelector('.js-email')
-const motDePasse = document.getElementById('motdepasse')
 const retapezMotDePasse = document.getElementById('retapezmotdepasse')
 const test = document.querySelector('.js-test')
 const SectionInscription = document.querySelector('.inscription')
 const SectionConnexion = document.querySelector('.ConnexionJs')
 
 
-// Attendez que le DOM soit complètement chargé
-document.addEventListener('DOMContentLoaded', () => {
-    if (SectionInscription && SectionConnexion  ) {
-        console.log("L'élément avec la classe 'inscription' et 'ConnexionJs' a été trouvé.")
-    } else {
-        console.error("L'élément avec la classe 'inscription' et 'ConnexionJs' n'a pas été trouvé.")
-    }
-})
+
 
 // Variable pour gérer le timeout
 let timeoutId;
@@ -60,6 +53,10 @@ function inscription(){
             } else {
                 test.classList.add("text-green-500");
                 test.textContent = 'Merci pour votre inscription !';
+                
+                // Sauvegarder les données dans le localStorage
+                localStorage.setItem('userPseudo', pseudo.value);
+                localStorage.setItem('userPassword', motDePasse.value);
                 
                 // Attendre 2 secondes avant de rediriger vers connecter.html
                 setTimeout(() => {
