@@ -4,10 +4,6 @@ const bouton = document.querySelector('.js-bouton')
 const email = document.querySelector('.js-email')
 const retapezMotDePasse = document.getElementById('retapezmotdepasse')
 const test = document.querySelector('.js-test')
-const SectionInscription = document.querySelector('.inscription')
-const SectionConnexion = document.querySelector('.ConnexionJs')
-
-
 
 
 // Variable pour gérer le timeout
