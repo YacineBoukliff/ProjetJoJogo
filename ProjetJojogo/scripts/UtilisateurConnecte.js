@@ -99,3 +99,31 @@ window.alert('Vous avez été déconnecté')
 window.location.href = 'UtilisateurEnregistre.html'
   
 })
+
+
+
+  function AfficherSport(NomSport) {
+
+    const sportSections = document.querySelectorAll('.js-presentation-sport');
+ 
+      sportSections.forEach(section => {
+          if (section.getAttribute('data-sport') === NomSport) {
+              section.classList.remove('hidden');
+          } else {
+              section.classList.add('hidden');
+          }
+      });
+
+      
+  }
+
+
+  const buttons = document.querySelectorAll('.js-bouton button');
+
+  buttons.forEach(button => {
+      button.addEventListener('click', function() {
+          const sport = this.querySelector('span').getAttribute('data-sport');
+          AfficherSport(sport);
+      });
+  });
+

@@ -9,7 +9,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="../scripts/script.js" defer></script>
-  <script  src="../scripts/UtilisateurConnecte.js" type="module" defer></script>
+  <script src="../scripts/UtilisateurConnecte.js" type="module" defer></script>
+  <script src="../scripts/testexport.js" type="module" defer></script>
  
 </head>
 <body>
@@ -29,13 +30,166 @@
         Grace a JoJogo trouvez des personnes avec qui faire du sport que ce soit a niveau amateur ou compétiteur. <br>
         Organiser ou rejoignez des sessions de sport et découvrez ou progressez ensemble. 
       </p>
-      
-      
-      
     </div>
   </div>
 
+ 
+   <!-- Section Presentation Sport --><div class="sport min-h-[85vh] bg-blue-600 dark:bg-black">
+
+    <div class="js-presentation-sport" data-sport="football">
+      <div class="titre flex justify-center items-center">
+          <h1 class="text-center text-7xl max-sm:text-4xl max-md:text-5xl max-lg:text-5xl font-bold text-white pt-10">Football</h1>
+      </div>
   
+      <div class="Football mx-10 flex justify-evenly gap-10 items-center max-sm:flex-col max-sm:items-center max-sm:justify-center max-md:flex-col max-lg:flex-col mt-10"> 
+          <div class="image border border-white rounded"><img class="rounded-lg" src="../Images/Salah.webp" alt=""></div>
+  
+          <div class="rounded-xl p-10">
+              <p class="text-xl text-center text-white">Pratiquez le football le sport du peuple avec notre Application Web Jojogo. <br>
+              Que ce soit a but amateur ou compétiteur Jojogo vous permet de trouver des personnes avec qui vous pourrez mettre des GOLAZOOOO !</p>
+          </div>
+      </div>
+  </div>
+
+  <div class="js-presentation-sport hidden" data-sport="basketball">
+      <div class="titre flex justify-center items-center">
+          <h1 class="text-center text-7xl max-sm:text-4xl max-md:text-5xl max-lg:text-5xl font-bold text-white pt-10">Basketball</h1>
+      </div>
+  
+      <div class="Basketball mx-10 flex justify-evenly gap-10 items-center max-sm:flex-col max-sm:items-center max-sm:justify-center max-md:flex-col max-lg:flex-col mt-10"> 
+          <div class="image border border-white rounded"><img class="rounded-lg" src="../Images/Basketball.webp" alt=""></div>
+  
+          <div class="rounded-xl p-10">
+              <p class="text-xl text-center text-white">Rejoignez la communauté basket sur Jojogo. <br>
+              Trouvez des partenaires pour des matchs amicaux ou compétitifs et perfectionnez votre jeu sur le terrain.</p>
+          </div>
+      </div>
+  </div>
+
+  <div class="js-presentation-sport hidden" data-sport="futsal">
+      <div class="titre flex justify-center items-center">
+          <h1 class="text-center text-7xl max-sm:text-4xl max-md:text-5xl max-lg:text-5xl font-bold text-white pt-10">Futsal</h1>
+      </div>
+  
+      <div class="Futsal mx-10 flex justify-evenly gap-10 items-center max-sm:flex-col max-sm:items-center max-sm:justify-center max-md:flex-col max-lg:flex-col mt-10"> 
+          <div class="image border border-white rounded"><img class="rounded-lg" src="../Images/Futsal.webp" alt=""></div>
+  
+          <div class="rounded-xl p-10">
+              <p class="text-xl text-center text-white">Découvrez l'intensité du futsal avec Jojogo. <br>
+              Organisez des parties rapides et techniques dans des salles près de chez vous.</p>
+          </div>
+      </div>
+  </div>
+
+  <div class="js-presentation-sport hidden" data-sport="musculation">
+      <div class="titre flex justify-center items-center">
+          <h1 class="text-center text-7xl max-sm:text-4xl max-md:text-5xl max-lg:text-5xl font-bold text-white pt-10">Musculation</h1>
+      </div>
+  
+      <div class="Musculation mx-10 flex justify-evenly gap-10 items-center max-sm:flex-col max-sm:items-center max-sm:justify-center max-md:flex-col max-lg:flex-col mt-10"> 
+          <div class="image border border-white rounded"><img class="rounded-lg" src="../Images/Musculation.webp" alt=""></div>
+  
+          <div class="rounded-xl p-10">
+              <p class="text-xl text-center text-white">Atteignez vos objectifs de fitness avec Jojogo. <br>
+              Trouvez des partenaires d'entraînement et partagez vos progrès en musculation.</p>
+          </div>
+      </div>
+  </div>
+
+  <div class="js-bouton flex justify-center items-center gap-2 py-5 mt-10">
+      <button class="btn btn-square rounded-full"><span class="text-black dark:text-white font-bold" data-sport="football">1</span></button>
+      <button class="btn btn-square rounded-full"><span class="text-black dark:text-white font-bold" data-sport="basketball">2</span></button>
+      <button class="btn btn-square rounded-full"><span class="text-black dark:text-white font-bold" data-sport="futsal">3</span></button>
+      <button class="btn btn-square rounded-full"><span class="text-black dark:text-white font-bold" data-sport="musculation">4</span></button>
+  </div>
+
+</div>
+
+
+
+<div class="faq-section bg-blue-600 dark:bg-black py-16">
+  <div class="container mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center text-white mb-10">FAQ</h2>
+    
+    <div class="max-w-3xl mx-auto">
+      <div class="join join-vertical w-full">
+        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
+          <input type="radio" name="my-accordion-4" checked="checked" />
+          <div class="collapse-title text-xl font-medium text-black">
+            Click to open this one and close others
+          </div>
+          <div class="collapse-content bg-white text-black">
+            <p>hello</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium text-black">
+            Click to open this one and close others
+          </div>
+          <div class="collapse-content bg-white text-black">
+            <p>hello</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium text-black">
+            Click to open this one and close others
+          </div>
+          <div class="collapse-content bg-white text-black">
+            <p>hello</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium text-black">
+            Click to open this one and close others
+          </div>
+          <div class="collapse-content bg-white text-black">
+            <p>hello</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium text-black">
+            Click to open this one and close others
+          </div>
+          <div class="collapse-content bg-white text-black">
+            <p>hello</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium text-black">
+            Click to open this one and close others
+          </div>
+          <div class="collapse-content bg-white text-black">
+            <p>hello</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium text-black">
+            Click to open this one and close others
+          </div>
+          <div class="collapse-content bg-white text-black">
+            <p>hello</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium text-black">
+            Click to open this one and close others
+          </div>
+          <div class="collapse-content bg-white text-black">
+            <p>hello</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
