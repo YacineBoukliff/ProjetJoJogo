@@ -127,3 +127,102 @@ window.location.href = 'UtilisateurEnregistre.html'
       });
   });
 
+
+
+  function AfficherFAQ(){
+
+    const FAQ = document.querySelector('.faq-section')
+
+    console.log(FAQ)
+
+    let faqHTML = ""
+
+    faqHTML += `
+     <div class="container mx-auto px-4 js-section-faq">
+    <h2 class="text-4xl font-bold text-center text-white mb-10">FAQ</h2>
+    
+    <div class="max-w-3xl mx-auto">
+      <div class="join join-vertical w-full">
+        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
+          <input type="radio" name="my-accordion-4" checked="checked" />
+          <div class="collapse-title text-xl font-medium text-black">
+            Click to open this one and close others
+          </div>
+          <div class="collapse-content bg-white text-black">
+            <p>hello</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium text-black">
+            Click to open this one and close others
+          </div>
+          <div class="collapse-content bg-white text-black">
+            <p>hello</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium text-black">
+            Click to open this one and close others
+          </div>
+          <div class="collapse-content bg-white text-black">
+            <p>hello</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium text-black">
+            Click to open this one and close others
+          </div>
+          <div class="collapse-content bg-white text-black">
+            <p>hello</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium text-black">
+            Click to open this one and close others
+          </div>
+          <div class="collapse-content bg-white text-black">
+            <p>hello</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium text-black">
+            Click to open this one and close others
+          </div>
+          <div class="collapse-content bg-white text-black">
+            <p>hello</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium text-black">
+            Click to open this one and close others
+          </div>
+          <div class="collapse-content bg-white text-black">
+            <p>hello</p>
+          </div>
+        </div>
+        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
+          <input type="radio" name="my-accordion-4" />
+          <div class="collapse-title text-xl font-medium text-black">
+            Click to open this one and close others
+          </div>
+          <div class="collapse-content bg-white text-black">
+            <p>hello</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+    `
+
+    FAQ.innerHTML = faqHTML
+
+  }
+
+  AfficherFAQ()
