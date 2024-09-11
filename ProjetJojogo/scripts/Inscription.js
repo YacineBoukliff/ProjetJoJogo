@@ -4,7 +4,7 @@ const bouton = document.querySelector('.js-bouton')
 const email = document.querySelector('.js-email')
 const retapezMotDePasse = document.getElementById('retapezmotdepasse')
 const test = document.querySelector('.js-test')
-const boutondechargement = document.getElementById('boutondechargement')
+export const boutondechargement = document.getElementById('boutondechargement')
 
 // Variable pour gérer le timeout
 let timeoutId;

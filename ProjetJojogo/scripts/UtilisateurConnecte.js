@@ -1,7 +1,6 @@
 export const storedPseudo = localStorage.getItem('userPseudo');
 export const storedPassword = localStorage.getItem('userPassword');
 
-
 console.log(storedPseudo)
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -90,15 +89,35 @@ function afficherNavbar(){
 
  afficherNavbar()
 
-const liendeconnexion = document.querySelector('.js-deconnexion')
+ 
+ function SeDeconnecter() {
+  const liendeconnexion = document.querySelector('.js-deconnexion');
 
-    liendeconnexion.addEventListener('click', function(event){
-  event.preventDefault()
-window.alert('Vous avez été déconnecté')
-// localStorage.removeItem('userPseudo')
-window.location.href = 'UtilisateurEnregistre.html'
+  liendeconnexion.addEventListener('click', function(event) {
+    event.preventDefault();
+    const AlerteDeconnexion = document.getElementById('AlerteDeconnexion');
+    AlerteDeconnexion.classList.remove('hidden');
+    
+   const boutonDeconnexion = document.querySelector('.js-bouton-alerte-deconnexion');
+   const boutonAnnuler = document.querySelector('.js-bouton-alerte-annuler');
+ 
   
-})
+  boutonDeconnexion.addEventListener('click', () => {
+    boutonDeconnexion.classList.add('hidden')
+    boutonAnnuler.classList.add('hidden')
+   
+    setTimeout(() => {
+      window.location.href = 'UtilisateurEnregistre.html';
+    }, 1500);
+  })  
+
+  boutonAnnuler.addEventListener('click', () => {
+    AlerteDeconnexion.classList.add('hidden');
+  })
+    
+  });
+}
+SeDeconnecter();
 
 
 
@@ -129,6 +148,8 @@ window.location.href = 'UtilisateurEnregistre.html'
 
 
 
+
+
   function AfficherFAQ(){
 
     const FAQ = document.querySelector('.faq-section')
@@ -138,87 +159,66 @@ window.location.href = 'UtilisateurEnregistre.html'
     let faqHTML = ""
 
     faqHTML += `
-     <div class="container mx-auto px-4 js-section-faq">
-    <h2 class="text-4xl font-bold text-center text-white mb-10">FAQ</h2>
-    
-    <div class="max-w-3xl mx-auto">
-      <div class="join join-vertical w-full">
-        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
-          <input type="radio" name="my-accordion-4" checked="checked" />
-          <div class="collapse-title text-xl font-medium text-black">
-            Click to open this one and close others
-          </div>
-          <div class="collapse-content bg-white text-black">
-            <p>hello</p>
-          </div>
+   <div class="container mx-auto px-4 js-section-faq">
+  <h2 class="text-4xl font-bold text-center text-black dark:text-white mb-10">FAQ</h2>
+  
+  <div class="max-w-3xl mx-auto">
+    <div class="join join-vertical w-full rounded-2xl overflow-hidden">
+      <div class="collapse collapse-arrow join-item border-black border-2 bg-white dark:bg-blue-600 dark:border-blue-700 first:rounded-t-3xl">
+        <input type="radio" name="my-accordion-4" checked="checked" />
+        <div class="collapse-title text-xl font-medium text-black dark:text-white">
+          A quoi sert Jojogo ?
         </div>
-        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
-          <input type="radio" name="my-accordion-4" />
-          <div class="collapse-title text-xl font-medium text-black">
-            Click to open this one and close others
-          </div>
-          <div class="collapse-content bg-white text-black">
-            <p>hello</p>
-          </div>
-        </div>
-        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
-          <input type="radio" name="my-accordion-4" />
-          <div class="collapse-title text-xl font-medium text-black">
-            Click to open this one and close others
-          </div>
-          <div class="collapse-content bg-white text-black">
-            <p>hello</p>
-          </div>
-        </div>
-        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
-          <input type="radio" name="my-accordion-4" />
-          <div class="collapse-title text-xl font-medium text-black">
-            Click to open this one and close others
-          </div>
-          <div class="collapse-content bg-white text-black">
-            <p>hello</p>
-          </div>
-        </div>
-        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
-          <input type="radio" name="my-accordion-4" />
-          <div class="collapse-title text-xl font-medium text-black">
-            Click to open this one and close others
-          </div>
-          <div class="collapse-content bg-white text-black">
-            <p>hello</p>
-          </div>
-        </div>
-        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
-          <input type="radio" name="my-accordion-4" />
-          <div class="collapse-title text-xl font-medium text-black">
-            Click to open this one and close others
-          </div>
-          <div class="collapse-content bg-white text-black">
-            <p>hello</p>
-          </div>
-        </div>
-        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
-          <input type="radio" name="my-accordion-4" />
-          <div class="collapse-title text-xl font-medium text-black">
-            Click to open this one and close others
-          </div>
-          <div class="collapse-content bg-white text-black">
-            <p>hello</p>
-          </div>
-        </div>
-        <div class="collapse collapse-arrow join-item border-yellow-400 border bg-yellow-400">
-          <input type="radio" name="my-accordion-4" />
-          <div class="collapse-title text-xl font-medium text-black">
-            Click to open this one and close others
-          </div>
-          <div class="collapse-content bg-white text-black">
-            <p>hello</p>
-          </div>
+        <div class="collapse-content  text-black dark:text-white">
+          <p>Grace a JoJogo vous pouvez trouver des partenaires pour vos activités sportives préférées. Vous pouvez également créer des événements et inviter vos amis à y participer. </p>
         </div>
       </div>
-      
+      <div class="collapse collapse-arrow join-item border-black border-2 bg-white dark:bg-blue-600 dark:border-blue-700">
+        <input type="radio" name="my-accordion-4" />
+        <div class="collapse-title text-xl font-medium text-black dark:text-white">
+          Pourquoi avoir créer Jojogo ?
+        </div>
+        <div class="collapse-content  text-black dark:text-white">
+          <p>Une idée que j'ai depuis un bon moment et que je voulais mettre en place, Je voulais créer une application qui permet de trouver des partenaires pour faire des activités sportives. <br>
+        Tout le monde n'as pas envie de faire du sport seul, et il est difficile de trouver des personnes pour faire des activités sportives. <br>
+        Justement Jojogo vient pour résoudre ce problème.
+          </p>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow join-item border-black border-2 bg-white dark:bg-blue-600 dark:border-blue-700">
+        <input type="radio" name="my-accordion-4" />
+        <div class="collapse-title text-xl font-medium text-black dark:text-white">
+         D'autres sports sont prévus ?
+        </div>
+        <div class="collapse-content  text-black dark:text-white">
+          <p>Oui bien évidemment, j'ai prévu d'ajouter d'autres sports comme le tennis, le JJB/Grappling et la course a pied.  </p>
+        </div>
+      </div>
+      <div class="collapse collapse-arrow join-item border-black border-2 bg-white dark:bg-blue-600 dark:border-blue-700">
+        <input type="radio" name="my-accordion-4" />
+        <div class="collapse-title text-xl font-medium text-black dark:text-white">
+          L'aspect compétitif va t'il etre plus poussé? 
+        </div>
+        <div class="collapse-content  text-black dark:text-white">
+          <p>Evidemment ! Jojogo à pour but d'élever l'enjeu de ses sections compétitions et de proposer un aspect plus développé
+           avec un système de champions pour chaques banlieues, villes, régions, pour chaque sports (badges exclusif) et déterminer qui sera le champion incontesté de France <br>
+        Chaque sports aura sa propre division de champions.  
+        </p>
+        </div>
+      </div>
+     
+      <div class="collapse collapse-arrow join-item border-black border-2 bg-white dark:bg-blue-600 dark:border-blue-700 last:rounded-b-3xl">
+        <input type="radio" name="my-accordion-4" />
+        <div class="collapse-title text-xl font-medium text-black dark:text-white">
+          D'autres fonctionnalités sont à venir ?
+        </div>
+        <div class="collapse-content  text-black dark:text-white">
+          <p>Oui soyez patient :) </p>
+        </div>
+      </div>
     </div>
   </div>
+</div>
     `
 
     FAQ.innerHTML = faqHTML
@@ -226,3 +226,5 @@ window.location.href = 'UtilisateurEnregistre.html'
   }
 
   AfficherFAQ()
+
+
