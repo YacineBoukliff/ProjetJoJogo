@@ -1,0 +1,47 @@
+1) Gérer le message d'alerte de déconnexion 
+
+
+1.2) Rajouter dans le menu créer une session et en faire une ancre 
+
+
+2) Faire de nouvelles Sections pour les pages d'accueil et quand on est connecté dans l'ordre d'affichage suivant 
+
+- Organiser une session de sport ( A FAIRE EN DERNIER CAR COMPLEXE )
+
+Faire des options dans la création des sessions si l'user selectionne équipe lui dire combien d'équipe il veut etc s'il veut des remplacants ou non 
+
+- Présensation des sports que le site propose ( Foot,Futsal,MMA,Basket ) 
+
+- Page fake des marques qui me feront confiance avec un effet carousel avec la librairie Swiper JS 
+
+- FAQ 
+
+- Footer personnalisé avec un message en dessous précisant que c'est une beta 
+
+3) Gérer le menu 
+
+- Option pour créer un nouveau compte 
+
+- Gérer le menu paramètres 
+
+- Gérer le menu stats 
+
+4) Badge 
+
+- Crée une section badge pour les utilisateurs 
+
+- Montrer tout les badges disponibles dans les paramètres 
+
+- Faire des badges amateur et compétiteur 
+
+
+5) Gérer les amis 
+
+
+Pouvoir ajouter des amis 
+Pouvoir parler a des users amis ou non 
+Avoir une fake icone verte ou rouge si l'user est connecté ou pas 
+
+6) Sections Feedback pour recevoir des feedback d'utilisateurs 
+
+Pouvoir permettre a l'user de remplir un mini formulaire pour demander des fonctionnalités des correctifs ou autres questions 
