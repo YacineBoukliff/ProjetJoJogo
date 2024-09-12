@@ -3,6 +3,9 @@
 
 console.log(storedPseudo)
 
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const BoutonMenu = document.getElementById('BoutonMenu');
     const Defilement = document.getElementById('Defilement');
@@ -91,15 +94,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
  
  function SeDeconnecter() {
-  const liendeconnexion = document.querySelector('.js-deconnexion');
+  const liendeconnexion = document.querySelector('.creer-session-deconnexion');
 
   liendeconnexion.addEventListener('click', function(event) {
     event.preventDefault();
-    const AlerteDeconnexion = document.getElementById('AlerteDeconnexion');
+    const AlerteDeconnexion = document.getElementById('CreerSessionAlerteDeconnexion');
     AlerteDeconnexion.classList.remove('hidden');
     
-   const boutonDeconnexion = document.querySelector('.js-bouton-alerte-deconnexion');
-   const boutonAnnuler = document.querySelector('.js-bouton-alerte-annuler');
+   const boutonDeconnexion = document.querySelector('.creer-session-bouton-deconnexion');
+   const boutonAnnuler = document.querySelector('.creer-session-bouton-annuler');
  
   
   boutonDeconnexion.addEventListener('click', () => {
@@ -154,7 +157,7 @@ SeDeconnecter();
 
     const FAQ = document.querySelector('.faq-section')
 
-    console.log(FAQ)
+    
 
     let faqHTML = ""
 

@@ -11,7 +11,7 @@ let timeoutId;
 
 boutondechargement.classList.add('hidden')
 
-function inscription(){
+ function inscription(){
     const regexPseudo = /^(?=.*[a-zA-Z])[\w\d]{6,}$/;
     const regexMotDePasse = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[\w\d!@#$%^&*()-=+{};:,<.>]{8,72}$/;
     const emailRegex = /^[a-zA-Z0-9][a-zA-Z0-9!#$%&'*+\-/=?^_`{|}~]*[a-zA-Z0-9]@[a-zA-Z0-9]+\.[a-zA-Z]+$/;
