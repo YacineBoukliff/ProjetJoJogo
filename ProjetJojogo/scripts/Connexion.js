@@ -62,7 +62,4 @@ function connexion() {
 
 connexion();
 
-// Exporter la fonction pour récupérer storedPseudo
-export function getStoredPseudo() {
-    return window.storedPseudo;
-}
+
