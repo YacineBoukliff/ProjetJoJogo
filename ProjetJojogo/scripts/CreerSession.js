@@ -1,7 +1,6 @@
-const texte = "test"
-export {texte}
 
-
+import {alerte} from "./testimport.js"  
+console.log(alerte)
 
 
 const storedPseudo = localStorage.getItem('userPseudo');

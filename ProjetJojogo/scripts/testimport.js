@@ -1,5 +1,2 @@
-
-
-
-import { texte } from "./CreerSession.js"
-console.log(texte)
+const alerte = "alerte"
+export {alerte}
