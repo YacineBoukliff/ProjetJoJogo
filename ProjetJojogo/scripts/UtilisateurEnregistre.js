@@ -19,9 +19,9 @@ function afficherMenu(){
       </a>
       
       <nav class="hidden md:flex items-center space-x-5">
-        <a class="text-slate-50 font-semibold hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">Accueil</a>
-        <a class="text-slate-50 font-medium hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">Sports</a>
-        <a class="text-slate-50 font-medium hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">FAQ</a>
+        <a class="text-white text-lg font-semibold hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">Accueil</a>
+        <a class="text-white text-lg font-semibold hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">Sports</a>
+        <a class="text-white text-lg font-semibold hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">FAQ</a>
       </nav>
       
       <div class="flex items-center space-x-4">
@@ -75,7 +75,7 @@ function AfficherAccueil(){
       </p>
       
       <div class="flex justify-center">
-        <button class="bg-black hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-2xl text-sm transition duration-300 ease-in-out transform hover:scale-105 js-rejoindre">
+        <button class="bg-black dark:bg-blue-600 hover:bg-gray-700 text-white font-bold py-3 px-4 rounded-2xl text-sm transition duration-300 ease-in-out transform hover:scale-105 js-rejoindre">
           <a  class="flex items-center text-xl  ">
             Rejoins JoJogo
             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-8 h-6 ml-1" viewBox="0 0 24 24">

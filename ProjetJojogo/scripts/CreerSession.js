@@ -50,10 +50,10 @@ function afficherNavbar(){
               </svg>
             </button>
             
-            <div id="CreerSessionDefilement" class="absolute right-0 mt-2 w-44 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-800 hidden">
+            <div id="CreerSessionDefilement" class="absolute right-0 mt-2 w-52 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-800 hidden">
               <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
                 <li>
-                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white font-bold">Paramètres</a>
+                 <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white font-bold">Paramètres</a>
                 </li>
                 <li>
                   <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white font-bold">Stats</a>
@@ -97,15 +97,17 @@ function SeDeconnecter() {
     
     const boutonDeconnexion = document.querySelector('.creer-session-bouton-deconnexion');
     const boutonAnnuler = document.querySelector('.creer-session-bouton-annuler');
+    const boutonChargement = document.querySelector('.js-chargement-bouton');
     
     if (boutonDeconnexion) {
       boutonDeconnexion.addEventListener('click', () => {
         boutonDeconnexion.classList.add('hidden');
         if (boutonAnnuler) boutonAnnuler.classList.add('hidden');
+        boutonChargement.classList.remove('hidden');
         
         setTimeout(() => {
           window.location.href = 'UtilisateurEnregistre.html';
-        }, 1500);
+        }, 2300);
       });
     }
 

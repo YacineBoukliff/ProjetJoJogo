@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', function() {
       </a>
       
       <nav class="hidden md:flex items-center space-x-5">
-        <a class="text-slate-50 font-semibold hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">Accueil</a>
-        <a class="text-slate-50 font-medium hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">Sports</a>
-        <a class="text-slate-50 font-medium hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">FAQ</a>
+        <a class="text-white text-lg font-semibold hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">Accueil</a>
+        <a class="text-white text-lg font-semibold hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">Sports</a>
+        <a class="text-white text-lg font-semibold hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">FAQ</a>
       </nav>
       
       <div class="flex items-center space-x-4">
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </svg>
   </button>
   
-  <div id="Defilement" class="absolute right-0 mt-2 w-44 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-800 hidden">
+  <div id="Defilement" class="absolute right-0 mt-2 w-52 bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-800 hidden">
     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200">
       <li>
         <a  href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white font-bold ">  
@@ -94,34 +94,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
  
  function SeDeconnecter() {
-  const liendeconnexion = document.querySelector('.creer-session-deconnexion');
+  const liendeconnexion = document.querySelector('.js-deconnexion');
 
-  liendeconnexion.addEventListener('click', function(event) {
-    event.preventDefault();
-    const AlerteDeconnexion = document.getElementById('CreerSessionAlerteDeconnexion');
-    AlerteDeconnexion.classList.remove('hidden');
-    
-   const boutonDeconnexion = document.querySelector('.creer-session-bouton-deconnexion');
-   const boutonAnnuler = document.querySelector('.creer-session-bouton-annuler');
- 
-  
-  boutonDeconnexion.addEventListener('click', () => {
-    boutonDeconnexion.classList.add('hidden')
-    boutonAnnuler.classList.add('hidden')
-   
-    setTimeout(() => {
-      window.location.href = 'UtilisateurEnregistre.html';
-    }, 1500);
-  })  
+  if (liendeconnexion) {
+    liendeconnexion.addEventListener('click', function(event) {
+      event.preventDefault();
+      const AlerteDeconnexion = document.getElementById('CreerSessionAlerteDeconnexion');
+      if (AlerteDeconnexion) {
+        AlerteDeconnexion.classList.remove('hidden');
+        
+        const boutonDeconnexion = document.querySelector('.creer-session-bouton-deconnexion');
+        const boutonAnnuler = document.querySelector('.creer-session-bouton-annuler');
+        const boutonChargement = document.querySelector('.js-bouton-chargement');
+     
+        if (boutonDeconnexion) {
+          boutonDeconnexion.addEventListener('click', () => {
+            boutonDeconnexion.classList.add('hidden');
+            if (boutonAnnuler) boutonAnnuler.classList.add('hidden');
+           
+            boutonChargement.classList.remove('hidden');
+           
+            setTimeout(() => {
+              window.location.href = 'UtilisateurEnregistre.html';
+            }, 2000);
+          });
+        }
 
-  boutonAnnuler.addEventListener('click', () => {
-    AlerteDeconnexion.classList.add('hidden');
-  })
-    
-  });
+        if (boutonAnnuler) {
+          boutonAnnuler.addEventListener('click', () => {
+            AlerteDeconnexion.classList.add('hidden');
+          });
+        }
+      } 
+    });
+  } 
 }
-SeDeconnecter();
 
+document.addEventListener('DOMContentLoaded', SeDeconnecter);
+
+
+ 
 
 
   function AfficherSport(NomSport) {
@@ -162,63 +174,82 @@ SeDeconnecter();
     let faqHTML = ""
 
     faqHTML += `
-   <div class="container mx-auto px-4 js-section-faq">
-  <h2 class="text-4xl font-bold text-center text-black dark:text-white mb-10">FAQ</h2>
+<div class="container mx-auto px-4 js-section-faq">
+  <h2 class="text-5xl font-bold text-center text-black dark:text-white mb-10">FAQ</h2>
   
   <div class="max-w-3xl mx-auto">
-    <div class="join join-vertical w-full rounded-2xl overflow-hidden">
-      <div class="collapse collapse-arrow join-item border-black border-2 bg-white dark:bg-blue-600 dark:border-blue-700 first:rounded-t-3xl">
-        <input type="radio" name="my-accordion-4" checked="checked" />
-        <div class="collapse-title text-xl font-medium text-black dark:text-white">
+    <!-- Accrodion Container -->
+    <div class="space-y-4">
+      
+      <!-- Accordéon 1 -->
+      <div class="collapse collapse-arrow bg-base-200 rounded-lg shadow-lg shadow-black dark:shadow-md dark:shadow-blue-500 border-2 border-black dark:border-blue-500">
+        <input type="radio" name="my-accordion" id="faq1" checked />
+        <label for="faq1" class="collapse-title text-xl cursor-pointer dark:text-white font-bold text-black ">
           A quoi sert Jojogo ?
-        </div>
-        <div class="collapse-content  text-black dark:text-white">
-          <p>Grace a JoJogo vous pouvez trouver des partenaires pour vos activités sportives préférées. Vous pouvez également créer des événements et inviter vos amis à y participer. </p>
-        </div>
-      </div>
-      <div class="collapse collapse-arrow join-item border-black border-2 bg-white dark:bg-blue-600 dark:border-blue-700">
-        <input type="radio" name="my-accordion-4" />
-        <div class="collapse-title text-xl font-medium text-black dark:text-white">
-          Pourquoi avoir créer Jojogo ?
-        </div>
-        <div class="collapse-content  text-black dark:text-white">
-          <p>Une idée que j'ai depuis un bon moment et que je voulais mettre en place, Je voulais créer une application qui permet de trouver des partenaires pour faire des activités sportives. <br>
-        Tout le monde n'as pas envie de faire du sport seul, et il est difficile de trouver des personnes pour faire des activités sportives. <br>
-        Justement Jojogo vient pour résoudre ce problème.
+        </label>
+        <div class="collapse-content">
+          <p>
+            Grâce à Jojogo, vous pouvez trouver des partenaires pour vos activités sportives préférées. Vous pouvez également créer des événements et inviter vos amis à y participer.
           </p>
         </div>
       </div>
-      <div class="collapse collapse-arrow join-item border-black border-2 bg-white dark:bg-blue-600 dark:border-blue-700">
-        <input type="radio" name="my-accordion-4" />
-        <div class="collapse-title text-xl font-medium text-black dark:text-white">
-         D'autres sports sont prévus ?
-        </div>
-        <div class="collapse-content  text-black dark:text-white">
-          <p>Oui bien évidemment, j'ai prévu d'ajouter d'autres sports comme le tennis, le JJB/Grappling et la course a pied.  </p>
-        </div>
-      </div>
-      <div class="collapse collapse-arrow join-item border-black border-2 bg-white dark:bg-blue-600 dark:border-blue-700">
-        <input type="radio" name="my-accordion-4" />
-        <div class="collapse-title text-xl font-medium text-black dark:text-white">
-          L'aspect compétitif va t'il etre plus poussé? 
-        </div>
-        <div class="collapse-content  text-black dark:text-white">
-          <p>Evidemment ! Jojogo à pour but d'élever l'enjeu de ses sections compétitions et de proposer un aspect plus développé
-           avec un système de champions pour chaques banlieues, villes, régions, pour chaque sports (badges exclusif) et déterminer qui sera le champion incontesté de France <br>
-        Chaque sports aura sa propre division de champions.  
-        </p>
+
+      <!-- Accordéon 2 -->
+      <div class="collapse collapse-arrow bg-base-200 rounded-lg shadow-lg shadow-black dark:shadow-md dark:shadow-blue-500 border-2 border-black dark:border-blue-500">
+        <input type="radio" name="my-accordion" id="faq2" />
+        <label for="faq2" class="collapse-title text-xl  cursor-pointer dark:text-white font-bold text-black">
+          Pourquoi avoir créé Jojogo ?
+        </label>
+        <div class="collapse-content">
+          <p>
+            C'est une idée que j'ai depuis un bon moment et que je voulais mettre en place. Je voulais créer une application qui permet de trouver des partenaires pour faire des activités sportives. 
+            <br>
+            Tout le monde n'a pas envie de faire du sport seul, et il est difficile de trouver des personnes pour faire des activités sportives.
+            <br>
+            Justement, Jojogo vient pour résoudre ce problème.
+          </p>
         </div>
       </div>
-     
-      <div class="collapse collapse-arrow join-item border-black border-2 bg-white dark:bg-blue-600 dark:border-blue-700 last:rounded-b-3xl">
-        <input type="radio" name="my-accordion-4" />
-        <div class="collapse-title text-xl font-medium text-black dark:text-white">
+
+      <!-- Accordéon 3 -->
+      <div class="collapse collapse-arrow bg-base-200 rounded-lg shadow-lg shadow-black dark:shadow-md dark:shadow-blue-500 border-2 border-black dark:border-blue-500">
+        <input type="radio" name="my-accordion" id="faq3" />
+        <label for="faq3" class="collapse-title text-xl  cursor-pointer dark:text-white font-bold text-black">
+          D'autres sports sont prévus ?
+        </label>
+        <div class="collapse-content">
+          <p>
+            Oui, bien évidemment ! J'ai prévu d'ajouter d'autres sports comme le tennis, le JJB/Grappling et la course à pied.
+          </p>
+        </div>
+      </div>
+
+      <!-- Accordéon 4 -->
+      <div class="collapse collapse-arrow bg-base-200 rounded-lg shadow-lg shadow-black dark:shadow-md dark:shadow-blue-500 border-2 border-black dark:border-blue-500">
+        <input type="radio" name="my-accordion" id="faq4" />
+        <label for="faq4" class="collapse-title text-xl  cursor-pointer dark:text-white font-bold text-black">
+          L'aspect compétitif va-t-il être plus poussé ?
+        </label>
+        <div class="collapse-content">
+          <p>
+            Évidemment ! Jojogo a pour but d'élever l'enjeu de ses sections compétitions et de proposer un aspect plus développé avec un système de champions pour chaque banlieue, ville, région, pour chaque sport (badges exclusifs) et déterminer qui sera le champion incontesté de France.
+            <br>
+            Chaque sport aura sa propre division de champions.
+          </p>
+        </div>
+      </div>
+
+      <!-- Accordéon 5 -->
+      <div class="collapse collapse-arrow bg-base-200 rounded-lg shadow-lg shadow-black dark:shadow-md dark:shadow-blue-500 border-2 border-black dark:border-blue-500">
+        <input type="radio" name="my-accordion" id="faq5" />
+        <label for="faq5" class="collapse-title text-xl cursor-pointer dark:text-white font-bold text-black">
           D'autres fonctionnalités sont à venir ?
-        </div>
-        <div class="collapse-content  text-black dark:text-white">
-          <p>Oui soyez patient :) </p>
+        </label>
+        <div class="collapse-content">
+          <p>Oui, soyez patient :) </p>
         </div>
       </div>
+      
     </div>
   </div>
 </div>
