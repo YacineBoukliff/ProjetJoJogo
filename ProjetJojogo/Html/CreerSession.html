@@ -37,5 +37,55 @@
           </div>
         </div>
     </div>
+
+
+    <div class="container mx-auto px-4 py-8 mt-16">
+      <h1 class="mb-8 text-center text-3xl font-bold text-gray-800 dark:text-white">Créer une Session Sportive</h1>
+      <form id="sessionForm" class="mx-auto mb-4 max-w-md rounded bg-white dark:bg-black px-8 pb-8 pt-6 shadow-md border border-white">
+        <div class="mb-4">
+          <label class="mb-2 block text-sm font-bold text-gray-700 dark:text-gray-300" for="sport">Sport</label>
+          <select id="sport" name="sport" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required>
+            <option value="">Sélectionnez un sport</option>
+            <option value="football">Football</option>
+            <option value="basketball">Basketball</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="mb-2 block text-sm font-bold text-gray-700 dark:text-gray-300" for="level">Niveau</label>
+          <select id="level" name="level" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required>
+            <option value="">Sélectionnez votre niveau</option>
+            <option value="amateur">Amateur</option>
+            <option value="intermediate">Intermédiaire</option>
+            <option value="advanced">Avancé</option>
+            <option value="competitor">Compétiteur</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="mb-2 block text-sm font-bold text-gray-700 dark:text-gray-300" for="date">Date</label>
+          <input type="date" id="date" name="date" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required />
+        </div>
+        <div class="mb-4">
+          <label class="mb-2 block text-sm font-bold text-gray-700 dark:text-gray-300" for="time">Heure</label>
+          <input type="time" id="time" name="time" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required />
+        </div>
+        <div class="mb-4">
+          <label class="mb-2 block text-sm font-bold text-gray-700 dark:text-gray-300" for="location">Lieu</label>
+          <input type="text" id="location" name="location" placeholder="Entrez le lieu" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required />
+        </div>
+        <div class="mb-6">
+          <label class="mb-2 block text-sm font-bold text-gray-700 dark:text-gray-300" for="notes">Notes supplémentaires</label>
+          <textarea id="notes" name="notes" placeholder="Toute information complémentaire" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" rows="3"></textarea>
+        </div>
+        <div class="flex items-center justify-center">
+          <button type="submit" class="focus:shadow-outline rounded bg-blue-500 px-4 py-2 font-bold text-white transition duration-300 hover:bg-blue-700 focus:outline-none">Créer la session</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="notification" class="fixed   bottom-0 right-0 m-6 rounded-lg bg-green-500 p-4 text-white opacity-0 shadow-lg transition-opacity duration-500">Session créée avec succès !</div>
+
+
+    
+
 </body>
 </html>

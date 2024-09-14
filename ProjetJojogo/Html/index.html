@@ -22,6 +22,7 @@
       
       <nav class="hidden md:flex items-center space-x-5">
         <a class="text-slate-50 font-semibold hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">Accueil</a>
+        <a class="text-slate-50 font-medium hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">Créer une session</a>
         <a class="text-slate-50 font-medium hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">Sports</a>
         <a class="text-slate-50 font-medium hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">FAQ</a>
       </nav>
@@ -51,29 +52,60 @@
     </div>
   </header>
 
-  <!-- Section d'accueil -->
-  <div class="accueil min-h-screen bg-blue-500 dark:bg-black flex flex-col justify-center items-center p-4">
-    <div class="max-w-5xl mx-auto text-center mb-8">
-      <h1 class="text-white dark:text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-        Venez faire du sport que vous soyez Amateur ou Compétiteur.
-      </h1>
-      
-      <p class="text-white dark:text-gray-300 text-base sm:text-lg md:text-xl mb-8">
-        Grace a JoJogo trouvez des personnes avec qui faire du sport que ce soit a niveau amateur ou compétiteur. <br>
-        Organiser ou rejoignez des sessions de sport et découvrez ou progressez ensemble. 
-      </p>
-      
-      <div class="flex justify-center">
-        <button class="bg-black hover:bg-gray-700 dark:bg-blue-600 dark:hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-2xl text-sm transition duration-300 ease-in-out transform hover:scale-105">
-          <a href="Inscription.html" class="flex items-center text-xl">
-            Rejoins JoJogo
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-8 h-6 ml-1" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </a>
-        </button>
+  <div class="container mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:px-8 flex items-center justify-center min-h-screen">
+    <div class="max-w-7xl w-full">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-8">
+        <div class="flex flex-col justify-center space-y-8">
+          <h1 class="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+            Du sport pour tous
+            <span class="block text-blue-400"> Avec Jojogo</span>
+          </h1>
+          <p class="max-w-2xl text-xl text-black dark:text-white">
+            Rejoignez une communauté sportive dynamique, où les athlètes de tous les niveaux peuvent se concentrer sur leurs performances et se dépasser.
+          </p>
+          <div class="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+            <button id="RejoignezJojogo" class="bg-black  hover:bg-gray-800 dark:bg-blue-600 dark:hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold transition duration-300 flex items-center justify-center">
+              <a href="Inscription.html"> Rejoignez Jojogo  </a> 
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            <button id="BoutonFaq" class=" bg-black  hover:bg-gray-800 dark:bg-blue-600 dark:hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold transition duration-300">
+              <a href="Faq.html"> En savoir plus </a>
+            </button>
+          </div>
+          <div class="grid grid-cols-3 gap-4 pt-8 border-t border-blue-800">
+            <div class="flex items-center space-x-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+              <span class="text-sm font-medium">10K+ Utilisateurs</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              <span class="text-sm font-medium">100+ Sessions</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              </svg>
+              <span class="text-sm font-medium">10+ Sports</span>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-transparent opacity-30 rounded-2xl"></div>
+          <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80&w=1000&ixlib=rb-4.0.3" alt="Athletes in action" class="rounded-2xl object-cover w-full h-full">
+          <div class="absolute bottom-4 left-4 right-4 bg-black bg-opacity-50 backdrop-blur-sm rounded-xl p-4">
+            <p class="text-sm font-medium text-white">
+              "Jojogo m'a permis de trouver des partenaires de sport. Je n'ai jamais été aussi soutenu et motivé!"
+            </p>
+            <p class="text-xs text-blue-300 mt-2">- Yacine B., Marathonien </p>
+          </div>
+        </div>
       </div>
-      
     </div>
   </div>
 
