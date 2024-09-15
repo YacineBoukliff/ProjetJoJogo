@@ -125,25 +125,71 @@ SeDeconnecter();
 
 document.addEventListener('DOMContentLoaded', initialiserAutocompletionAdresse());
 
-const boutonCreerSession = document.querySelector('.Js-CreerSession')
-
-console.log(boutonCreerSession)
-
-boutonCreerSession.addEventListener('click', () => {
-  let AgeInput = document.getElementById("AgeInput")
-
-const AgeInputNombre = Number(AgeInput.value)
 
 
-if (isNaN(AgeInputNombre)) {
-  console.log("C'est pas un nombre")
-  AgeInput.value = ""
+
+function GenererModifierSession (){
+
+  let DivModifierSession = document.querySelector('.js-modifiersession')
+
+  let ModifierSessionHTML = ""
+
+  ModifierSessionHTML += `
+
+   <h1 class="mb-8 text-center text-3xl font-bold text-gray-800 dark:text-white">Modifier session  </h1>
+    <form id="sessionForm" class="mx-auto mb-4 max-w-md rounded bg-white dark:bg-black px-8 pb-8 pt-6 shadow-md border border-black dark:border-white">
+      <div class="mb-4">
+        <label class="mb-2 block text-sm font-bold text-gray-700 dark:text-gray-300" for="sport">Sport *</label>
+        <select id="sport" name="sport" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required>
+          <option value="">Sélectionnez un sport</option>
+          <option value="football">Football</option>
+          <option value="basketball">Futsal</option>
+          <option value="basketball">Musculation</option>
+          <option value="basketball">Basketball</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="mb-2 block text-sm font-bold text-gray-700 dark:text-gray-300" for="level">Niveau *</label>
+        <select id="level" name="level" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required>
+          <option value="">Sélectionnez votre niveau</option>
+          <option value="amateur">Amateur</option>
+          <option value="competitor">Compétiteur</option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="mb-2 block text-sm font-bold text-gray-700 dark:text-gray-300" for="date">Date *</label>
+        <input type="date" id="date" name="date" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required />
+      </div>
+      <div class="mb-4">
+        <label class="mb-2 block text-sm font-bold text-gray-700 dark:text-gray-300" for="texte">Age *</label>
+        <input type="text" id="AgeInput" name="texte" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required />
+      </div>
+      <div class="mb-4">
+        <label class="mb-2 block text-sm font-bold text-gray-700 dark:text-gray-300" for="time">Heure de départ * </label>
+        <input type="time" id="time" name="time" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required />
+      </div>
+      <div class="mb-4">
+        <label class="mb-2 block text-sm font-bold text-gray-700 dark:text-gray-300" for="time">Heure de fin * </label>
+        <input type="time" id="time" name="time" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required />
+      </div>
+      
+      <div class="mb-4 relative">
+        <label class="mb-2 block text-sm font-bold text-gray-700 dark:text-gray-300" for="location">Lieu *</label>
+        <input type="text" id="location" name="location" placeholder="Entrez le lieu" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required />
+        <ul id="locationSuggestions" class="absolute z-10 w-full bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-b-lg shadow-lg max-h-60 overflow-auto hidden"></ul>
+      </div>
+      <div class="mb-6">
+        <label class="mb-2 block text-sm font-bold text-gray-700 dark:text-gray-300" for="notes">Informations supplémentaires</label>
+        <textarea id="notes" name="notes" placeholder="Toute information complémentaire" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" rows="3"></textarea>
+      </div>
+      <div class="flex items-center justify-center">
+        <button type="submit" class=" Js-CreerSession focus:shadow-outline rounded bg-blue-500 px-4 py-2 font-bold text-white transition duration-300 hover:bg-blue-700 focus:outline-none">Créer la session</button>
+      </div>
+    </form>
+  
+  `
+
+  DivModifierSession.innerHTML = ModifierSessionHTML
 }
-else {console.log("C'est un nombre")}
 
-console.log(typeof AgeInputNombre)
-})
-
-
-
-
+GenererModifierSession()
