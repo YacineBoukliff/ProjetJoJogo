@@ -193,3 +193,42 @@ function GenererModifierSession (){
 }
 
 GenererModifierSession()
+
+function CreationAlgo() {
+  const algorithme = [`
+  /* Algorithme pour gérer les ajouts les modifications et les suppressions 
+
+  Création de Session 
+
+  1) Selectionner tout les éléments des inputs un a un ou alors tous ensemble avec un foreach 
+  2) Gerer les regex de ces inputs 
+  3) Limiter le nombre de création de session a 3 
+  4) L'utilisateur ne peut pas créer une session a une date qui est avant l'heure ou il a créer la sessions exemple (Session pour Novembre 2002 alors qu'on est en 2024)
+  5) Quand l'utilisateur appuie sur crée session cela crée la carte session avec toute ses infos et ca vide tout les inputs après validation
+  6) Créer trois sessions avec pour chaque des informations différentes selon les infos rentrées par l'utilisateur 
+  7) Afficher un message ou une pop up quand une session est créer avec le setTimeout et clearTimeout
+  8) Ajout du localStorage pour garder les données  
+
+
+  Modification de sessions 
+
+  1) En appuyant sur modifier la section modifier apparait 
+  2) Selectionner tout les éléments des inputs un a un ou alors tous ensemble avec un foreach 
+  3) Gerer les regex de ces inputs 
+  4) L'utilisateur ne peut pas créer une session a une date qui est avant l'heure ou il a créer la sessions exemple (Session pour Novembre 2002 alors qu'on est en 2024)
+  5) Quand l'utilisateur appuie sur valider mettre a jour la carte de la session et cacher le formulaire de modification 
+  7) Afficher un message ou une pop up quand une session est modifier  avec le setTimeout et clearTimeout
+  8) Ne peut pas modifier plusieurs sessions a la fois donc valider sa modif et en relancer une autre 
+
+  Suppresion de session 
+
+  1) Identifier chaque bouton pour chaque sessions pour qu'ils soient unique et représentent bien leur sessions
+  2) Si l'utilisateur clique sur le bouton supprimer Afficher un message d'alerte 
+  3) Si l'utilisateur clique sur valider supprimer la session
+  */`];
+
+  console.log(algorithme[0]);
+}
+
+// Appel de la fonction pour afficher l'algorithme dans la console
+CreationAlgo();
