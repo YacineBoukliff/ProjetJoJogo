@@ -27,11 +27,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function afficherNavbar(){ 
     const header = document.querySelector('.creer-session-header');
-    if (!header) return;
+    
 
     let navbar = `
       <div class="max-w-screen-xl mx-auto p-4 flex items-center justify-between">
-        <a href="index.html" class="flex-shrink-0 flex items-center text-white">
+        <a href="UtilisateurConnecte.html" class="flex-shrink-0 flex items-center text-white">
           <span class="text-2xl font-medium">JoJogo</span>
         </a>
         
@@ -124,3 +124,26 @@ afficherNavbar();
 SeDeconnecter();
 
 document.addEventListener('DOMContentLoaded', initialiserAutocompletionAdresse());
+
+const boutonCreerSession = document.querySelector('.Js-CreerSession')
+
+console.log(boutonCreerSession)
+
+boutonCreerSession.addEventListener('click', () => {
+  let AgeInput = document.getElementById("AgeInput")
+
+const AgeInputNombre = Number(AgeInput.value)
+
+
+if (isNaN(AgeInputNombre)) {
+  console.log("C'est pas un nombre")
+  AgeInput.value = ""
+}
+else {console.log("C'est un nombre")}
+
+console.log(typeof AgeInputNombre)
+})
+
+
+
+
