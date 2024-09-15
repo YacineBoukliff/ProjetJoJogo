@@ -40,13 +40,15 @@
 
 
     <div class="container mx-auto px-4 py-8 mt-16">
-      <h1 class="mb-8 text-center text-3xl font-bold text-gray-800 dark:text-white">Créer une Session Sportive</h1>
-      <form id="sessionForm" class="mx-auto mb-4 max-w-md rounded bg-white dark:bg-black px-8 pb-8 pt-6 shadow-md border border-white">
+      <h1 class="mb-8 text-center text-3xl font-bold text-gray-800 dark:text-white">Créer une Session </h1>
+      <form id="sessionForm" class="mx-auto mb-4 max-w-md rounded bg-white dark:bg-black px-8 pb-8 pt-6 shadow-md border border-black dark:border-white">
         <div class="mb-4">
           <label class="mb-2 block text-sm font-bold text-gray-700 dark:text-gray-300" for="sport">Sport</label>
           <select id="sport" name="sport" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required>
             <option value="">Sélectionnez un sport</option>
             <option value="football">Football</option>
+            <option value="basketball">Futsal</option>
+            <option value="basketball">Musculation</option>
             <option value="basketball">Basketball</option>
           </select>
         </div>
@@ -55,8 +57,6 @@
           <select id="level" name="level" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required>
             <option value="">Sélectionnez votre niveau</option>
             <option value="amateur">Amateur</option>
-            <option value="intermediate">Intermédiaire</option>
-            <option value="advanced">Avancé</option>
             <option value="competitor">Compétiteur</option>
           </select>
         </div>
