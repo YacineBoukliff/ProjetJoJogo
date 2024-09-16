@@ -55,7 +55,7 @@
         </div>
         <div class="mb-4">
           <label class="mb-2 block text-sm font-bold text-gray-700 dark:text-gray-300" for="level">Niveau *</label>
-          <select id="level" name="level" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required>
+          <select id="niveau" name="level" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required>
             <option value="">Sélectionnez votre niveau</option>
             <option value="amateur">Amateur</option>
             <option value="competitor">Compétiteur</option>
@@ -71,11 +71,11 @@
         </div>
         <div class="mb-4">
           <label class="mb-2 block text-sm font-bold text-gray-700 dark:text-gray-300" for="time">Heure de départ * </label>
-          <input type="time" id="time" name="time" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required />
+          <input type="time" id="tempsdebut" name="time" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required />
         </div>
         <div class="mb-4">
           <label class="mb-2 block text-sm font-bold text-gray-700 dark:text-gray-300" for="time">Heure de fin * </label>
-          <input type="time" id="time" name="time" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required />
+          <input type="time" id="tempsfin" name="time" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required />
         </div>
         
         <div class="mb-4 relative">
@@ -88,7 +88,7 @@
           <textarea id="notes" name="notes" placeholder="Toute information complémentaire" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" rows="3"></textarea>
         </div>
         <div class="flex items-center justify-center">
-          <button type="submit" class=" Js-CreerSession focus:shadow-outline rounded bg-blue-500 px-4 py-2 font-bold text-white transition duration-300 hover:bg-blue-700 focus:outline-none">Créer la session</button>
+          <button type="submit"  class=" Js-CreerSession focus:shadow-outline rounded bg-blue-500 px-4 py-2 font-bold text-white transition duration-300 hover:bg-blue-700 focus:outline-none">Créer la session</button>
         </div>
       </form>
     </div>
