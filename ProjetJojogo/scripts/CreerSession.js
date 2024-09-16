@@ -198,7 +198,8 @@ GenererModifierSession()
 
 // Début algorithme Création de session 
 
-const boutonCreerSession = document.querySelector('.Js-CreerSession');
+function CreerSession(){
+  const boutonCreerSession = document.querySelector('.Js-CreerSession');
 const formulaire = document.getElementById('sessionForm');
 const TitreSession = document.getElementById('TitreSession');
 const conteneurSessions = document.querySelector('.flex.flex-wrap.justify-center.gap-20.mb-14');
@@ -210,78 +211,85 @@ const MaxSession = 3;
 let SessionRestante = 3;
 
 boutonCreerSession.addEventListener('click', function(event) {
-    event.preventDefault(); 
+  event.preventDefault(); 
 
-    if (CompteurSession >= MaxSession) {
-        console.log("Vous ne pouvez plus créer de sessions");
-        boutonCreerSession.disabled = true;
-        boutonCreerSession.textContent = "Plus de session disponible";
-        boutonCreerSession.classList.add('bg-red-600', 'hover:bg-red-700');
-    }
+  if (CompteurSession >= MaxSession) {
+      console.log("Vous ne pouvez plus créer de sessions");
+      boutonCreerSession.disabled = true;
+      boutonCreerSession.textContent = "Plus de session disponible";
+      boutonCreerSession.classList.add('bg-red-600', 'hover:bg-red-700');
+  }
 
-    const valeursInputs = {
-        age: document.getElementById('AgeInput').value,
-        date: document.getElementById('date').value,
-        tempsDebut: document.getElementById('tempsdebut').value,
-        tempsFin: document.getElementById('tempsfin').value,
-        lieu: document.getElementById('location').value,
-        niveau: document.getElementById('niveau').value,
-        notes: document.getElementById('notes').value,
-        sport: document.getElementById('sport').value
-    };
+  const valeursInputs = {
+      age: document.getElementById('AgeInput').value,
+      date: document.getElementById('date').value,
+      tempsDebut: document.getElementById('tempsdebut').value,
+      tempsFin: document.getElementById('tempsfin').value,
+      lieu: document.getElementById('location').value,
+      niveau: document.getElementById('niveau').value,
+      notes: document.getElementById('notes').value,
+      sport: document.getElementById('sport').value
+  };
 
-    CompteurSession++;
-    SessionRestante--;
+  CompteurSession++;
+  SessionRestante--;
 
-    // Création de la nouvelle carte de session
-    const nouvelleCarteSession = document.createElement('div');
-    nouvelleCarteSession.className = 'bg-white shadow-xl rounded-2xl max-w-sm w-full overflow-hidden transition-all duration-300 hover:shadow-2xl';
-    nouvelleCarteSession.innerHTML = `
-        <div class="relative bg-blue-600 h-32 flex items-center justify-center">
-            <div class="absolute top-4 right-4 bg-white text-blue-600 text-xs font-bold px-2 py-1 rounded-full">${valeursInputs.sport}</div>
-            <div class="w-24 h-24 bg-white rounded-full overflow-hidden border-4 border-white shadow-lg flex items-center justify-center">
-                <img src="../Images/${valeursInputs.sport.toLowerCase()}.png" alt="${valeursInputs.sport}">
-            </div>
-        </div>
-        <div class="p-6">
-            <div class="text-center mb-4">
-                <h2 class="text-2xl font-bold text-gray-800">Session #${CompteurSession}</h2>
-                <span class="text-sm font-semibold text-gray-600">${valeursInputs.date}</span>
-            </div>
-            <div class="space-y-3 mb-6">
-                <div class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-1 text-blue-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                    <p class="text-gray-600 font-semibold">Niveau: ${valeursInputs.niveau}</p>
-                </div>
-                <div class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-1 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <p class="text-gray-600">${valeursInputs.tempsDebut} - ${valeursInputs.tempsFin}</p>
-                </div>
-                <div class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-1 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    <p class="text-gray-600">${valeursInputs.lieu}</p>
-                </div>
-                <div class="flex items-start">
-                    <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-1 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                    <p class="text-gray-600">${valeursInputs.notes}</p>
-                </div>
-            </div>
-            <div class="flex justify-between">
-                <button class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-300">
-                    Modifier
-                </button>
-                <button class="px-4 py-2 bg-red-600 text-white font-semibold rounded-lg hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition-all duration-300">
-                    Supprimer
-                </button>
-            </div>
-        </div>
-    `;
+  // Création de la nouvelle carte de session
+  const nouvelleCarteSession = document.createElement('div');
+  nouvelleCarteSession.className = 'bg-white shadow-xl rounded-2xl max-w-sm w-full overflow-hidden transition-all duration-300 hover:shadow-2xl';
+  nouvelleCarteSession.innerHTML = `
+      <div class="relative bg-blue-600 h-32 flex items-center justify-center">
+          <div class="absolute top-4 right-4 bg-white text-blue-600 text-xs font-bold px-2 py-1 rounded-full">${valeursInputs.sport}</div>
+          <div class="w-24 h-24 bg-white rounded-full overflow-hidden border-4 border-white shadow-lg flex items-center justify-center">
+              <img src="../Images/${valeursInputs.sport.toLowerCase()}.png" alt="${valeursInputs.sport}">
+          </div>
+      </div>
+      <div class="p-6">
+          <div class="text-center mb-4">
+              <h2 class="text-2xl font-bold text-gray-800">Session #${CompteurSession}</h2>
+              <span class="text-sm font-semibold text-gray-600">${valeursInputs.date}</span>
+          </div>
+          <div class="space-y-3 mb-6">
+              <div class="flex items-start">
+                  <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-1 text-blue-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                  <p class="text-gray-600 font-semibold">Niveau: ${valeursInputs.niveau}</p>
+              </div>
+              <div class="flex items-start">
+                  <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-1 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  <p class="text-gray-600">${valeursInputs.tempsDebut} - ${valeursInputs.tempsFin}</p>
+              </div>
+              <div class="flex items-start">
+                  <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-1 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                  <p class="text-gray-600">${valeursInputs.lieu}</p>
+              </div>
+              <div class="flex items-start">
+                  <svg class="w-5 h-5 mr-2 flex-shrink-0 mt-1 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                  <p class="text-gray-600">${valeursInputs.notes}</p>
+              </div>
+          </div>
+          <div class="flex justify-between">
+              <button class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-300">
+                  Modifier
+              </button>
+              <button class="px-4 py-2 bg-red-600 text-white font-semibold rounded-lg hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 transition-all duration-300">
+                  Supprimer
+              </button>
+          </div>
+      </div>
+  `;
 
-    conteneurSessions.appendChild(nouvelleCarteSession);
+  conteneurSessions.appendChild(nouvelleCarteSession);
 
-    TitreSession.classList.remove('hidden');
+  TitreSession.classList.remove('hidden');
 
-    console.log(`Il vous reste ${SessionRestante} sessions`);
+  console.log(`Il vous reste ${SessionRestante} sessions`);
 
-    formulaire.reset();
+  formulaire.reset();
 });
+
+
+}
+
+
+
+CreerSession()

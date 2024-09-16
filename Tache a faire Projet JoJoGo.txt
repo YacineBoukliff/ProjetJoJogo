@@ -1,5 +1,5 @@
-1) Gérer le message d'alerte de déconnexion 
 
+1) Gérer les images dans la création de session le regex et les dates et heures pour pas pouvoir créer des sessions avant le temps actuel 
 
 1.2) Rajouter dans le menu créer une session et en faire une ancre 
 
