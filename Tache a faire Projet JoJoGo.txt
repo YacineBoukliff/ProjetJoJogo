@@ -37,7 +37,6 @@ Faire des options dans la création des sessions si l'user selectionne équipe l
 
 5) Gérer les amis 
 
-
 Pouvoir ajouter des amis 
 Pouvoir parler a des users amis ou non 
 Avoir une fake icone verte ou rouge si l'user est connecté ou pas 
