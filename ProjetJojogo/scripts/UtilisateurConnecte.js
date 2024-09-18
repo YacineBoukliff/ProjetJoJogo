@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
       <nav class="hidden md:flex items-center space-x-5">
         <a class="text-white text-lg font-semibold hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">Accueil</a>
-         <a class="text-white text-lg font-semibold hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">Créer une session</a>
+         <a href="CreerSession.html" class="text-white text-lg font-semibold hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">Créer une session</a>
         <a class="text-white text-lg font-semibold hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">Sports</a>
         <a class="text-white text-lg font-semibold hover:text-black dark:hover:text-sky-500 hover:cursor-pointer">FAQ</a>
       </nav>

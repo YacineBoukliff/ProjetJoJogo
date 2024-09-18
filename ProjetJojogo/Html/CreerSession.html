@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Créer Session - JoJogo</title>
     <script src="../scripts/CreerSession.js" type="module" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/locale/fr.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/plugin/customParseFormat.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -47,9 +50,9 @@
           <label class="mb-2 block text-sm font-bold text-gray-700 dark:text-gray-300" for="sport">Sport *</label>
           <select id="sport" name="sport" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required>
             <option value="">Sélectionnez un sport</option>
-            <option value="football">Football</option>
-            <option value="basketball">Futsal</option>
-            <option value="basketball">Musculation</option>
+            <option value="Football">Football</option>
+            <option value="Futsal">Futsal</option>
+            <option value="Musculation">Musculation</option>
             <option value="basketball">Basketball</option>
           </select>
         </div>
@@ -57,8 +60,8 @@
           <label class="mb-2 block text-sm font-bold text-gray-700 dark:text-gray-300" for="level">Niveau *</label>
           <select id="niveau" name="level" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required>
             <option value="">Sélectionnez votre niveau</option>
-            <option value="amateur">Amateur</option>
-            <option value="competitor">Compétiteur</option>
+            <option value="Amateur">Amateur</option>
+            <option value="Competiteur">Compétiteur</option>
           </select>
         </div>
         <div class="mb-4">

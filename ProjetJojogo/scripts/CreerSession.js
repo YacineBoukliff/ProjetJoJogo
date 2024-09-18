@@ -3,7 +3,8 @@ import {alerte} from "./testimport.js"
 console.log(alerte)
 import {initialiserAutocompletionAdresse} from "../scripts/Api/Api.js"
 
-
+dayjs.locale('fr');
+dayjs.extend(window.dayjs_plugin_customParseFormat);
 
 
 const storedPseudo = localStorage.getItem('userPseudo');
@@ -145,8 +146,8 @@ function GenererModifierSession (){
         <select id="sport" name="sport" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required>
           <option value="">Sélectionnez un sport</option>
           <option value="football">Football</option>
-          <option value="basketball">Futsal</option>
-          <option value="basketball">Musculation</option>
+          <option value="Futsal">Futsal</option>
+          <option value="Musculation">Musculation</option>
           <option value="basketball">Basketball</option>
         </select>
       </div>
@@ -154,8 +155,8 @@ function GenererModifierSession (){
         <label class="mb-2 block text-sm font-bold text-gray-700 dark:text-gray-300" for="level">Niveau *</label>
         <select id="level" name="level" class="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 dark:text-gray-300 dark:bg-gray-700 shadow focus:outline-none" required>
           <option value="">Sélectionnez votre niveau</option>
-          <option value="amateur">Amateur</option>
-          <option value="competitor">Compétiteur</option>
+          <option value="Amateur">Amateur</option>
+          <option value="Competiteur">Compétiteur</option>
         </select>
       </div>
       <div class="mb-4">
@@ -242,7 +243,7 @@ function CreerSession() {
     carte.className = 'bg-white shadow-xl rounded-2xl max-w-sm w-full overflow-hidden transition-all duration-300 hover:shadow-2xl';
     carte.innerHTML = `
       <div class="relative bg-blue-600 h-32 flex items-center justify-center">
-        <div class="absolute top-4 right-4 bg-white text-blue-600 text-xs font-bold px-2 py-1 rounded-full">${session.sport}</div>
+        <div class="absolute top-4 right-4 bg-white text-blue-600 text-sm font-bold px-2 py-1 rounded-full">${session.sport}</div>
         <div class="w-24 h-24 bg-white rounded-full overflow-hidden border-4 border-white shadow-lg flex items-center justify-center">
           <img src="../Images/${session.sport.toLowerCase()}.png" alt="${session.sport}">
         </div>
@@ -288,32 +289,99 @@ function CreerSession() {
 
   boutonCreerSession.addEventListener('click', function(event) {
     event.preventDefault();
-
+  
     if (sessions.length >= MaxSession) {
       console.log("Vous ne pouvez plus créer de sessions");
       return;
     }
+  
+    const dateInput = document.getElementById('date');
+    const tempsDebutInput = document.getElementById('tempsdebut');
+    const tempsFinInput = document.getElementById('tempsfin');
+    const ageInput = document.getElementById('AgeInput');
+    const sportInput = document.getElementById('sport');
+    const niveauInput = document.getElementById('niveau');
+    const lieuInput = document.getElementById('location');
+    const notesInput = document.getElementById('notes');
+  
+    // Vérification de la date
+    const dateSelectionnee = dayjs(dateInput.value);
+    const maintenant = dayjs();
+    const unAnPlusTard = maintenant.add(1, 'year');
+  
+    if (dateSelectionnee.isBefore(maintenant, 'day')) {
+      alert("La date sélectionnée ne peut pas être antérieure à aujourd'hui.");
+      return;
+    }
 
+    if (dateSelectionnee.isAfter(unAnPlusTard)) {
+      alert("La date sélectionnée ne peut pas être supérieure à un an à partir d'aujourd'hui.");
+      return;
+    }
+
+    // Vérification de l'année (max 4 chiffres)
+    const anneeSelectionnee = dateSelectionnee.year();
+    if (anneeSelectionnee < 1000 || anneeSelectionnee > 9999) {
+      alert("L'année doit être comprise entre 1000 et 9999.");
+      return;
+    }
+  
+    // Vérification de l'heure
+    const tempsDebut = dayjs(`${dateInput.value} ${tempsDebutInput.value}`);
+    const tempsFin = dayjs(`${dateInput.value} ${tempsFinInput.value}`);
+  
+    if (tempsDebut.isBefore(maintenant)) {
+      alert("L'heure de début ne peut pas être antérieure à l'heure actuelle.");
+      return;
+    }
+  
+    if (tempsFin.isBefore(tempsDebut)) {
+      alert("L'heure de fin doit être postérieure à l'heure de début.");
+      return;
+    }
+  
+    // Vérification de l'âge
+    const age = parseInt(ageInput.value);
+    if (isNaN(age) || age < 14 || age > 100 || !Number.isInteger(age)) {
+      alert("L'âge doit être un nombre entier d'au moins 14 ans.");
+      return;
+    }
+  
+    // Vérification des champs obligatoires
+    if (!sportInput.value || !niveauInput.value || !lieuInput.value) {
+      alert("Veuillez remplir tous les champs obligatoires.");
+      return;
+    }
+  
     const nouvelleSession = {
-      age: document.getElementById('AgeInput').value,
-      date: document.getElementById('date').value,
-      tempsDebut: document.getElementById('tempsdebut').value,
-      tempsFin: document.getElementById('tempsfin').value,
-      lieu: document.getElementById('location').value,
-      niveau: document.getElementById('niveau').value,
-      notes: document.getElementById('notes').value,
-      sport: document.getElementById('sport').value
+      age: age,
+      date: dateInput.value,
+      tempsDebut: tempsDebutInput.value,
+      tempsFin: tempsFinInput.value,
+      lieu: lieuInput.value,
+      niveau: niveauInput.value,
+      notes: notesInput.value,
+      sport: sportInput.value
     };
-
+  
     sessions.push(nouvelleSession);
     mettreAJourAffichage();
     sauvegarderSessions();
     formulaire.reset();
+  
+    // Affichage d'une notification de succès
+    const notification = document.getElementById('notification');
+    notification.style.opacity = '1';
+    setTimeout(() => {
+      notification.style.opacity = '0';
+    }, 3000);
   });
 
   window.supprimerSession = supprimerSession;
 
+  // Chargez les sessions au démarrage
   chargerSessions();
+
 }
 
 CreerSession();
