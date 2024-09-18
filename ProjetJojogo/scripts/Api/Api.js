@@ -20,6 +20,7 @@ export function initialiserAutocompletionAdresse() {
     });
   
     function formaterAdresse(element) {
+        console.log(element.address)
       const adresse = element.address; // Récupère les détails de l'adresse
       let adresseFormatee = '';
       
