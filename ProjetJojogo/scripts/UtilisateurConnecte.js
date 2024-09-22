@@ -137,31 +137,20 @@ document.addEventListener('DOMContentLoaded', SeDeconnecter);
  
 
 
-  function AfficherSport(NomSport) {
-
-    const sportSections = document.querySelectorAll('.js-presentation-sport');
- 
-      sportSections.forEach(section => {
-          if (section.getAttribute('data-sport') === NomSport) {
-              section.classList.remove('hidden');
-          } else {
-              section.classList.add('hidden');
-          }
-      });
-
-      
-  }
-
-
-  const buttons = document.querySelectorAll('.js-bouton button');
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = document.querySelectorAll('.sport-slide');
+  const buttons = document.querySelectorAll('[data-slide]');
 
   buttons.forEach(button => {
-      button.addEventListener('click', function() {
-          const sport = this.querySelector('span').getAttribute('data-sport');
-          AfficherSport(sport);
+    button.addEventListener('click', () => {
+      const sport = button.dataset.slide;
+      slides.forEach(slide => {
+        slide.classList.toggle('hidden', slide.dataset.sport !== sport);
       });
+      buttons.forEach(btn => btn.classList.toggle('opacity-100', btn === button));
+    });
   });
-
+});
 
  
 
